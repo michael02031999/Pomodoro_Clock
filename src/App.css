@@ -1,38 +1,130 @@
+* {
+  margin: 0; 
+  padding: 0;
+}
+
 .App {
+  height: 100vh;
+  background: rgb(29,85,92);
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  font-family: "Times New Roman", Times, serif;
+}
+
+#title {
+  color: white;
+  font-family: "Times New Roman", Times, serif; 
+  font-size: 35px;
+  margin-bottom: 17.5px;
+}
+
+#pomodoroApp {
+  text-align: center; 
+  display: flex; 
+
+}
+
+#break-label, #session-label {
+  color: white;
+  font-family: "Times New Roman", Times, serif; 
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Break length down arrow */
+
+#breakButtons {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 10px;
+}
+
+.downArrow {
+  color: white; 
+  font-size: 25px; 
+}
+
+#break-length {
+  color: white; 
+  font-size: 25px; 
+
+}
+
+.upArrow {
+  color: white; 
+  font-size: 25px; 
+}
+
+/* Session Length */
+
+#session-length {
+  color: white; 
+  font-size: 25px; 
+}
+
+#sessionLengthSubtitle {
+  color: white; 
+  font-size: 20px;
+}
+
+#sessionButtons {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 10px;
+}
+
+#timer {
+  margin-top: 15px;
+  border: 5px solid black;
+  color: white; 
+  padding: 15px 35px;
+  border-radius: 30px;
+}
+
+#timer-label {
+  color: white; 
+  font-size: 25px;
+}
+
+#time-left {
+  color: white; 
+  font-size: 65px;
+}
+
+#timerButtonContainer {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.playButton, .pauseButton, .rewindButton {
+  color: white; 
+  font-size: 25px; 
+}
+
+/* Credits */
+
+#credits {
+  margin-top: 10px;
+  color: white; 
+  font-size: 15px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#credits p {
+  color: rgb(0,39,77)
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#designedBy {
+  color: rgb(136,31,40); 
+  font-size: 15px;
 }
