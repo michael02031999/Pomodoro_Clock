@@ -147,20 +147,24 @@ function App() {
 
   function handleOperator(event) {
 
+    console.log(currentLabel);
+
     if (isPaused == true || isReset == true || timesPlayIsPressed == 0) {
 
       if (isPaused == true &&  event.target.id == "break-decrement" && breakLength > 1) {
         setBreakLength(prevBreakLength => {
           return (prevBreakLength - 1)
         })
-
-        if(minutesLeft < 11) {
-          console.log("BREAK DECREMENT TEST")
-          setTimestamp("0" + (breakLength-1) + ":00")
+        if (currentLabel == "Break") {
+          if(minutesLeft < 11 && currentLabel == "Break") {
+            console.log("BREAK DECREMENT TEST")
+            setTimestamp("0" + (breakLength-1) + ":00")
+          }
+          else {
+            setTimestamp(breakLength-1 + ":00")
+          }
         }
-        else {
-          setTimestamp(breakLength-1 + ":00")
-        }
+        
 
       }
       else if(isPaused == true && event.target.id == "break-increment" && breakLength < 60) {
@@ -168,13 +172,15 @@ function App() {
           return (prevBreakLength + 1)
         })
 
-        if(minutesLeft < 9) {
-          //setMinutesLeft("0" + (sessionLength+1))
-          setTimestamp("0" + (breakLength+1) + ":00")
-        }
-        else {
-          //setMinutesLeft(sessionLength+1);
-          setTimestamp(breakLength+1 + ":00")
+        if (currentLabel == "Break") {
+          if(minutesLeft < 9 && currentLabel == "Break") {
+            //setMinutesLeft("0" + (sessionLength+1))
+            setTimestamp("0" + (breakLength+1) + ":00")
+          }
+          else {
+            //setMinutesLeft(sessionLength+1);
+            setTimestamp(breakLength+1 + ":00")
+          }
         }
       }
 
@@ -186,16 +192,16 @@ function App() {
 
         setMinutesLeft(sessionLength-1);
 
-        if(minutesLeft < 11) {
-          console.log("BREAK DECREMENT TEST")
-          setTimestamp("0" + (sessionLength-1) + ":00")
+        if (currentLabel == "Session") {
+          if(minutesLeft < 11) {
+            console.log("BREAK DECREMENT TEST")
+            setTimestamp("0" + (sessionLength-1) + ":00")
+          }
+          else {
+            setTimestamp(sessionLength-1 + ":00")
+          }
         }
-        else {
-          setTimestamp(sessionLength-1 + ":00")
-        }
-    
-  
-        
+         
       }
       else if (isPaused == true && event.target.id === "session-increment" && sessionLength < 60) {
         setSessionLength(prevSessionLength => {
@@ -204,15 +210,16 @@ function App() {
 
         setMinutesLeft(sessionLength+1);
 
-        if(minutesLeft < 9) {
-          //setMinutesLeft("0" + (sessionLength+1))
-          setTimestamp("0" + (sessionLength+1) + ":00")
+        if(currentLabel == "Session") {
+          if(minutesLeft < 9) {
+            //setMinutesLeft("0" + (sessionLength+1))
+            setTimestamp("0" + (sessionLength+1) + ":00")
+          }
+          else {
+            //setMinutesLeft(sessionLength+1);
+            setTimestamp(sessionLength+1 + ":00")
+          }
         }
-        else {
-          //setMinutesLeft(sessionLength+1);
-          setTimestamp(sessionLength+1 + ":00")
-        }
-       
     }
       
     }
