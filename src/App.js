@@ -258,24 +258,25 @@ function App() {
     <div className="App">
       <h1 id="title">25 + 5 Clock</h1>
         <div id="pomodoroApp">
-          <div id="length">
+        
+            <div id="allIncrementDecrementButtons">
+              <div id = "breakLength">
+                <p id="break-label">Break Length</p>
 
-            <div id = "breakLength">
-              <p id="break-label">Break Length</p>
-
-              <div id="breakButtons">
-                <i id="break-decrement" className="downArrow fa-solid fa-arrow-down" onClick = {handleOperator}></i>
-                <p id="break-length">{breakLength}</p>
-                <i id="break-increment" className="upArrow fa-solid fa-arrow-up" onClick={handleOperator}></i>
+                <div id="breakButtons">
+                  <i id="break-decrement" className="downArrow fa-solid fa-arrow-down" onClick = {handleOperator}></i>
+                  <p id="break-length">{breakLength}</p>
+                  <i id="break-increment" className="upArrow fa-solid fa-arrow-up" onClick={handleOperator}></i>
+                </div>
               </div>
-            </div>
 
-            <div id = "sessionLength">
-              <p id="session-label">Session Length</p>
-              <div id="sessionButtons">
-                <i id="session-decrement" className="downArrow fa-solid fa-arrow-down" onClick={handleOperator}></i>
-                <p id="session-length">{sessionLength}</p>
-                <i id="session-increment" className="upArrow fa-solid fa-arrow-up" onClick={handleOperator}></i>
+              <div id = "sessionLength">
+                <p id="session-label">Session Length</p>
+                <div id="sessionButtons">
+                  <i id="session-decrement" className="downArrow fa-solid fa-arrow-down" onClick={handleOperator}></i>
+                  <p id="session-length">{sessionLength}</p>
+                  <i id="session-increment" className="upArrow fa-solid fa-arrow-up" onClick={handleOperator}></i>
+                </div>
               </div>
             </div>
           
@@ -290,7 +291,7 @@ function App() {
               <i id="reset" class="rewindButton fa-solid fa-arrows-rotate" onClick = {reset}></i>
 
             </div>
-          </div>
+          
       
       </div>
       <div id="credits">
